@@ -5,10 +5,4 @@ terraform {
     google      = "3.46.0"
     google-beta = "3.46.0"
   }
-
-  # The storage bucket needs to be created before it can be used here in the backend
-  # backend "gcs" {
-  #   bucket = "odev-terraform-state"
-  #   prefix = "gcp-terraform-network/shared-vpc-restricted-subnets/__HOST_PROJECT_ID__"
-  # }
 }
