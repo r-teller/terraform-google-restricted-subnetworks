@@ -9,7 +9,7 @@ locals {
 }
 
 module "restricted_subnetworks" {
-  source  = "r-teller/restricted_subnetworks/google"
+  source  = "r-teller/restricted-subnetworks/google"
   version = ">=0.0.0"
 
   target_mappings = local.target_mappings
