@@ -28,7 +28,7 @@ locals {
       folder_ids  = target.folder_ids
       project_ids = target.project_ids
       subnetwork  = target.subnetwork
-    } if (target.subnetwork_filter != "false" && target.region_filter != "false" && target.network_filter != "false") && (target.subnetwork_filter != "na" || target.region_filter != "na" || target.network_filter != "na") 
+    } if(target.subnetwork_filter != "false" && target.region_filter != "false" && target.network_filter != "false") && (target.subnetwork_filter != "na" || target.region_filter != "na" || target.network_filter != "na")
   ]
 
   additional_target_subnetwork_mappings = flatten([
