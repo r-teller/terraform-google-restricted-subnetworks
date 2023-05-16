@@ -7,6 +7,15 @@ locals {
         folder_ids  = target.folder_ids
         project_ids = target.project_ids
 
+        ipv4_range        = null # Coming Soon
+        ipv4_filter       = null # Coming Soon
+        ipv4_regex        = null # Coming Soon
+
+
+        ipv6_range        = null # Coming Soon
+        ipv6_filter       = null # Coming Soon
+        ipv6_regex        = null # Coming Soon
+
         subnetwork        = subnetwork.subnetwork
         subnetwork_filter = try(target.subnet_match.subnetwork.regex != null, false) ? length(regexall(target.subnet_match.subnetwork.regex, subnetwork.selfLink)) > 0 ? "true" : "false" : "na"
         subnetwork_regex  = try(target.subnet_match.subnetwork.regex != null, false) ? target.subnet_match.subnetwork.regex : "na"

@@ -14,6 +14,7 @@ module "restricted_subnetworks" {
 
   target_mappings = local.target_mappings
   host_project_id = var.host_project_id
+  shared_vpcs     = var.shared_vpcs
 }
 
 

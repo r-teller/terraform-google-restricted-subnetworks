@@ -3,6 +3,9 @@ This solution is comprised of two terriform modules. The restricted_subnetworks 
 
 The subnetworks to project/folder mapping should be defined at the Host Project level to reduce the touchpoints required to update organization policies when subnetworks are added or removed. With the targets directory of the Host Project JSON files are used to define which subnets should be allowed based on regex matching (Subnetwork, Region and Network)
 
+>*Note:* If you do not pass in a variable for `shared_vpcs` the `modules\subnetworks_list` is used to dynamically discover the list of available VPCs.
+
+
 ## Hierarchy
 Example:
 ```
@@ -23,11 +26,13 @@ Example:
 
 ```
 ## terraform.tfvars for dynamic discovery of subnets
+# examples\__project_without_vpcs__
 host_project_id     = "my-host-project"
 ```
 
 ```
 ## terraform.tfvars for discovery of subnets within specific vpcs
+# examples\__project_with_vpcs__
 host_project_id     = "my-host-project"
 shared_vpcs         = ["my-vpc-alpha", "my-vpc-bravo"]
 ```
